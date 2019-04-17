@@ -107,6 +107,7 @@ module.exports = {
   appBuild: resolveApp('build/public'), // EDIT
   nodeBuild: resolveApp('build'), // ADD
   nodeBuildAppJs: resolveApp('build/server.js'), // ADD
+  reactLoadable: resolveApp('build/react-loadable.json'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),

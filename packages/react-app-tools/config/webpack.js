@@ -10,6 +10,7 @@
 const nodeExternals = require('webpack-node-externals');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const paths = require('./paths');
+const { ReactLoadablePlugin } = require('react-loadable/webpack');
 
 module.exports = function(env) {
   const config = require('./webpack.config')(env, 'node');
@@ -41,6 +42,9 @@ module.exports = function(env) {
         new WriteFilePlugin({
           output: paths.nodeBuild,
           test: /^(.(?!hot-update))*$/,
+        }),
+        new ReactLoadablePlugin({
+          filename: paths.reactLoadable,
         }),
       ]),
 
